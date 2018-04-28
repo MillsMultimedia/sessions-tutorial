@@ -1,4 +1,9 @@
 extends layout
 
 block content
-  h1 Information about #{firstname}
+  h1 #{user.firstName} #{user.lastName}
+  a(href='mailto:' + user.email) #{user.email}
+  p
+   a(href='/user-landing/' + user._id ) Welcome Page
+  p
+   a(href='/logout') Log Out

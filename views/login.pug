@@ -3,13 +3,15 @@ extends layout
 block content
   if loginrequired
     h1 You have to log in to view that page
+  else if wrongLogin
+    h1 Try again
   else
     h1 Please login
-  label Username 
-  input(type='text', name='username', id='username')
-  br
-  label Password 
-  input(type='text', name='password', id='password')
-  br
-  a(href='/user-login')
-    button Submit
+  form(method='GET' action='/user-login')
+     label Email 
+     input(type='text', name='username', id='username')
+     br
+     label Password 
+     input(type='text', name='password', id='password')
+     br
+     input(type='submit' value='Log In')
