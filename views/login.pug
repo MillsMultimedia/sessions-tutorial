@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  if loginrequired
+    h1 You have to log in to view that page
+  else
+    h1 Please login
+  label Username 
+  input(type='text', name='username', id='username')
+  br
+  label Password 
+  input(type='text', name='password', id='password')
+  br
+  a(href='/user-login')
+    button Submit
